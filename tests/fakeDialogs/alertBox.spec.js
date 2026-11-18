@@ -17,8 +17,8 @@ test('Fake alert box can be opened and closed', async ({ page }) => {
 
   await page.getByRole('button', { name: 'OK' }).click();
 
-  const closedDialog = page.getByText('Clicked OK on Alert');
-  await expect(closedDialog).toBeVisible();
+  await expect(windowDialog).toBeHidden();
+  await expect(page.getByText('Clicked OK on Alert')).toBeVisible();
 
   /*
   Test:

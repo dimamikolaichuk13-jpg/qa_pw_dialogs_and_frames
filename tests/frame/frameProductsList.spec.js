@@ -5,6 +5,10 @@ test('Products list can be opened within the frame', async ({ page }) => {
 
   const frame = page.frameLocator('#frame');
 
+  await expect(
+    frame.getByRole('link', { name: 'Special Offers' }),
+  ).toBeVisible();
+
   await frame.getByRole('link', { name: 'Our Products' }).click();
   await expect(frame.getByRole('link', { name: 'Cameras' })).toBeVisible();
 

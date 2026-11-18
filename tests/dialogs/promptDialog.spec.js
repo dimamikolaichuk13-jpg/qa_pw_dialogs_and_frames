@@ -17,7 +17,7 @@ test('Prompt dialog message saves provided input', async ({ page }) => {
   await page.getByRole('button', { name: 'Show prompt box' }).click();
 
   expect(dialogType).toBe('prompt');
-  expect(dialogMessage).toContain('I prompt you');
+  expect(dialogMessage).toBe('I prompt you');
 
   await expect(
     page.getByText(`You clicked OK. 'prompt' returned value`),
